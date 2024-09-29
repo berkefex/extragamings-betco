@@ -55,3 +55,37 @@ export type GetPlayerKpiResponse = {
     DepositAmount: number;
   };
 };
+
+export type GetTransactionsData = {
+  StartTimeLocal: string;
+  EndTimeLocal: string;
+  ClientId: number;
+  CurrencyId: string;
+  SkeepRows: number;
+  MaxRows: number;
+  PaymentSystemId: number | null;
+  GameId: number | null;
+  DocumentTypeIds: number[];
+  ByPassTotals: boolean;
+};
+
+export type Transaction = {
+  Amount: number;
+  Balance: number;
+  ClientId: number;
+  CreatedLocal: string;
+  DocumentId: number;
+  DocumentTypeId: number;
+  GameId: number | null;
+  Game: string | null;
+  Note: string | null;
+  PaymentSystemName: string | null;
+  PaymentSystemId: number | null;
+  CurrencyId: string;
+};
+
+export type GetTransactionsResponse = {
+  Data: {
+    Objects: Transaction[];
+  };
+};
