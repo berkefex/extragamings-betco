@@ -93,9 +93,8 @@ export class BackofficeClient {
     getAll: (
       start: Date,
       end: Date,
-      data: Omit<
-        GetAllDepositsData,
-        "FromCreatedDateLocal" | "ToCreatedDateLocal"
+      data: Partial<
+        Omit<GetAllDepositsData, "FromCreatedDateLocal" | "ToCreatedDateLocal">
       >
     ) =>
       this.post<GetAllDepositsResponse>(
