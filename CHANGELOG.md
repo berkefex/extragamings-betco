@@ -1,5 +1,11 @@
 # @extragamings/betco
 
+## 0.1.1
+
+### Patch Changes
+
+- 94cad1e: fix players.updateRestrictions data property type
+
 ## 0.1.0
 
 ### Minor Changes
