@@ -100,15 +100,7 @@ export type PlayerRestrictions = {
   CanCasinoLogin: boolean;
 };
 
-export type UpdatePlayerRestrictionsData = {
-  CanLogin: boolean;
-  CanBet: boolean;
-  CanDeposit: boolean;
-  CanWithdraw: boolean;
-  CanIncreaseLimit: boolean;
-  CanClaimBonus: boolean;
-  CanCasinoLogin: boolean;
-};
+export type UpdatePlayerRestrictionsData = Partial<PlayerRestrictions>;
 
 export type UpdatePlayerRestrictionsResponse = {
   HasError: boolean;
