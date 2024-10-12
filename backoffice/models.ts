@@ -89,3 +89,37 @@ export type GetTransactionsResponse = {
     Objects: Transaction[];
   };
 };
+
+export type PlayerRestrictions = {
+  CanLogin: boolean;
+  CanBet: boolean;
+  CanDeposit: boolean;
+  CanWithdraw: boolean;
+  CanIncreaseLimit: boolean;
+  CanClaimBonus: boolean;
+  CanCasinoLogin: boolean;
+};
+
+export type UpdatePlayerRestrictionsData = {
+  CanLogin: boolean;
+  CanBet: boolean;
+  CanDeposit: boolean;
+  CanWithdraw: boolean;
+  CanIncreaseLimit: boolean;
+  CanClaimBonus: boolean;
+  CanCasinoLogin: boolean;
+};
+
+export type UpdatePlayerRestrictionsResponse = {
+  HasError: boolean;
+  AlertMessage: string;
+};
+
+export type GetPlayerRestrictionsResponse = {
+  Data: PlayerRestrictions & {
+    ClientId: Player["Id"];
+    UserName: string;
+    ModifedLocal: string;
+    Modified: string;
+  };
+};

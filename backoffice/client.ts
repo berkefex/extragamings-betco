@@ -6,9 +6,12 @@ import type {
   GetAllPlayersData,
   GetAllPlayersResponse,
   GetPlayerKpiResponse,
+  GetPlayerRestrictionsResponse,
   GetTransactionsData,
   GetTransactionsResponse,
   Player,
+  UpdatePlayerRestrictionsData,
+  UpdatePlayerRestrictionsResponse,
 } from "./models";
 
 export class BackofficeClient {
@@ -87,6 +90,28 @@ export class BackofficeClient {
         },
         token
       ).then(({ Data }) => Data.Objects),
+    getRestrictions: (playerId: Player["Id"], token?: string) =>
+      this.get<GetPlayerRestrictionsResponse>(
+        "/Client/GetClientRestriction?clientId=" + playerId,
+        token
+      ).then(({ Data }) => Data),
+    updateRestrictions: async (
+      playerId: Player["Id"],
+      data: UpdatePlayerRestrictionsData,
+      token?: string
+    ) => {
+      const { ClientId, ModifedLocal, Modified, UserName, ...restrictions } =
+        await this.players.getRestrictions(playerId);
+
+      return this.post<UpdatePlayerRestrictionsResponse>(
+        "/Client/SaveClientRestriction",
+        {
+          ...restrictions,
+          ...data,
+        },
+        token
+      );
+    },
   };
 
   readonly deposits = {
