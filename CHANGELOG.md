@@ -1,5 +1,11 @@
 # @extragamings/betco
 
+## 0.1.0
+
+### Minor Changes
+
+- 534067d: added functionality to check and update player restrictions
+
 ## 0.0.5
 
 ### Patch Changes
