@@ -100,7 +100,7 @@ export class BackofficeClient {
       data: UpdatePlayerRestrictionsData,
       token?: string
     ) => {
-      const { ClientId, ModifedLocal, Modified, UserName, ...restrictions } =
+      const { ModifedLocal, Modified, UserName, ...restrictions } =
         await this.players.getRestrictions(playerId);
 
       return this.post<UpdatePlayerRestrictionsResponse>(
