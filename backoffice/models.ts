@@ -115,3 +115,19 @@ export type GetPlayerRestrictionsResponse = {
     Modified: string;
   };
 };
+
+export type PlayerBonus = {
+  Id: number;
+  AcceptanceType: number;
+  AcceptanceDateLocal: string;
+  ClientId: number;
+  PartnerBonusId: number;
+  ResultType: number;
+  ResultDateLocal: string;
+  Amount: number;
+  CreatedLocal: string;
+};
+
+export type GetPlayerBonusesResponse = {
+  Data: PlayerBonus[];
+};

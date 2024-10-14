@@ -5,6 +5,7 @@ import type {
   GetAllDepositsResponse,
   GetAllPlayersData,
   GetAllPlayersResponse,
+  GetPlayerBonusesResponse,
   GetPlayerKpiResponse,
   GetPlayerRestrictionsResponse,
   GetTransactionsData,
@@ -112,6 +113,10 @@ export class BackofficeClient {
         token
       );
     },
+    getBonuses: (playerId: Player["Id"]) =>
+      this.post<GetPlayerBonusesResponse>("/Client/GetClientBonuses", {
+        ClientId: playerId,
+      }),
   };
 
   readonly deposits = {
