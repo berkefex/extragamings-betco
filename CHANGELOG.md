@@ -1,5 +1,11 @@
 # @extragamings/betco
 
+## 0.1.2
+
+### Patch Changes
+
+- 0a33f39: fix related to players.updateRestrictions
+
 ## 0.1.1
 
 ### Patch Changes
