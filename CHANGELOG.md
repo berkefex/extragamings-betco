@@ -1,5 +1,11 @@
 # @extragamings/betco
 
+## 0.2.0
+
+### Minor Changes
+
+- f6da05a: added functionality to get player bonuses
+
 ## 0.1.2
 
 ### Patch Changes
