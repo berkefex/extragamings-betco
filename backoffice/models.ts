@@ -131,3 +131,8 @@ export type PlayerBonus = {
 export type GetPlayerBonusesResponse = {
   Data: PlayerBonus[];
 };
+
+export type AddPlayerBonusResponse = {
+  HasError: boolean;
+  AlertMessage: string;
+};

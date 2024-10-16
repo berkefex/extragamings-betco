@@ -1,6 +1,7 @@
 import { DateTime } from "luxon";
 import { BackofficeError } from "./error";
 import type {
+  AddPlayerBonusResponse,
   GetAllDepositsData,
   GetAllDepositsResponse,
   GetAllPlayersData,
@@ -11,6 +12,7 @@ import type {
   GetTransactionsData,
   GetTransactionsResponse,
   Player,
+  PlayerBonus,
   UpdatePlayerRestrictionsData,
   UpdatePlayerRestrictionsResponse,
 } from "./models";
@@ -116,6 +118,16 @@ export class BackofficeClient {
     getBonuses: (playerId: Player["Id"]) =>
       this.post<GetPlayerBonusesResponse>("/Client/GetClientBonuses", {
         ClientId: playerId,
+      }),
+    addBonus: (
+      playerId: Player["Id"],
+      bonusId: PlayerBonus["Id"],
+      amount: number
+    ) =>
+      this.post<AddPlayerBonusResponse>("/Client/AddClientToBonus", {
+        ClientId: playerId,
+        Amount: amount.toString(),
+        PartnerBonusId: bonusId,
       }),
   };
 
