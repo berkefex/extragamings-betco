@@ -1,5 +1,11 @@
 # @extragamings/betco
 
+## 0.3.0
+
+### Minor Changes
+
+- aab792b: added functionality to add player bonuses
+
 ## 0.2.0
 
 ### Minor Changes
