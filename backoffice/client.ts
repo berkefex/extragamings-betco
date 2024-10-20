@@ -36,6 +36,8 @@ export class BackofficeClient {
       headers: {
         "Content-Type": "application/json",
         Authentication: token,
+        origin: "https://backoffice.betconstruct.com",
+        referer: "https://backoffice.betconstruct.com",
       },
       body: data ? JSON.stringify(data) : undefined,
     };
