@@ -1,5 +1,11 @@
 # @extragamings/betco
 
+## 0.3.1
+
+### Patch Changes
+
+- f4a3547: limit adjustments
+
 ## 0.3.0
 
 ### Minor Changes
